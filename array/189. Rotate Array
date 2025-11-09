@@ -1,6 +1,18 @@
-/**
- Do not return anything, modify nums in-place instead.
- */
 function rotate(nums: number[], k: number): void {
-    
+    const n = nums.length;
+    k = k % n;
+
+    let rotatedArry: number[] = [];
+
+    for (let i = n - k; i < nums.length; i++) {
+        rotatedArry.push(nums[i]);
+    }
+
+    for (let i = 0; i < n - k; i++) {
+        rotatedArry.push(nums[i]);
+    }
+
+    for (let i = 0; i < n; i++) {
+        nums[i] = rotatedArry[i];
+    }
 };
