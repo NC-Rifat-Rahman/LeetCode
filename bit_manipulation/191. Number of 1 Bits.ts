@@ -5,7 +5,7 @@ function hammingWeight(n: number): number {
         if (n % 2 === 1) {
             count++;
         }
-        n >> 1;
+        n = n >> 1;
     }
     return count;
 };
