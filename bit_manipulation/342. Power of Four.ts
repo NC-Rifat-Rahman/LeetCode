@@ -11,7 +11,7 @@
        - This mask has 1s at all odd positions, so ANDing with powers of four gives 0
 **/
 function isPowerOfFour(n: number): boolean {
-    if (n < 0)
+    if (n <= 0)
         return false;
 
     return (n & (n - 1)) === 0 && (n & 0xAAAAAAAA) === 0;
