@@ -34,7 +34,7 @@
  * - Adding a node is O(n) because we must resize the matrix.
  */
 
-class UndirectedGraph {
+class UndirectedGraphMatrix {
     private nodes: string[] = [];      // List of all node names (in order added)
     private matrix: number[][] = [];   // Adjacency matrix: matrix[i][j] === 1 means edge
 
@@ -120,7 +120,7 @@ class UndirectedGraph {
     }
 }
 
-class DirectedGraph {
+class DirectedGraphMatrix {
     private nodes: string[] = [];
     private matrix: number[][] = [];
 
@@ -197,7 +197,7 @@ class DirectedGraph {
 
 // ─── Usage Example ─────────────────────────────────────
 
-const ug = new UndirectedGraph();
+const ug = new UndirectedGraphMatrix();
 ug.addEdge('A', 'B'); ug.addEdge('A', 'C');
 ug.addEdge('B', 'D'); ug.addEdge('C', 'D');
 
@@ -206,7 +206,7 @@ console.log(ug.getMatrix());
 console.log(ug.hasEdge('A', 'B'));     // true
 console.log(ug.neighbors('A'));        // ['B', 'C']
 
-const dg = new DirectedGraph();
+const dg = new DirectedGraphMatrix();
 dg.addEdge('A', 'B'); dg.addEdge('B', 'C');
 dg.addEdge('C', 'A'); dg.addEdge('A', 'C');
 
