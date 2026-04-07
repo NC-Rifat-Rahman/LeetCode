@@ -1,4 +1,3 @@
-
 /**
  * THEORY OF IMPLEMENTATION - Undirected Graph using Adjacency List
  * 
@@ -29,8 +28,6 @@
  * - Directed uses two Maps (outList + inList) because direction matters.
  * - Undirected uses only one Map (adjList) because edges are symmetric.
  * - Both use generic <T> so nodes can be string, number, or any type.
- * 
- * This implementation is clean, efficient, and consistent with the DirectedGraph you saw earlier.
  */
 
 class UndirectedGraphList<T> {
@@ -152,8 +149,6 @@ class UndirectedGraphList<T> {
  * - Uses Map<T, Set<T>> because Map preserves insertion order and allows any key type.
  * - Maintains BOTH outList and inList so inNeighbors and inDegree are fast.
  * - removeNode is carefully written to clean up all references (no dangling edges).
- * 
- * This is a high-quality, production-ready implementation for directed graphs.
  */
 
 export class DirectedGraphList<T> {
