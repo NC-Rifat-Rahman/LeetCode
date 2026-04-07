@@ -220,3 +220,18 @@ function dfsFull<T>(graph: Graph<T>): T[][] {
     }
     return components;                     // Return all components
 }
+
+const ug = new Graph<string>('undirected');
+ug.addEdge('A', 'B'); ug.addEdge('A', 'C'); ug.addEdge('B', 'D');
+bfs(ug, 'A');   // ['A','B','C','D']
+dfs(ug, 'A');   // ['A','B','D','C']
+
+const dg = new Graph<string>('directed');
+dg.addEdge('A', 'B'); dg.addEdge('B', 'C'); dg.addEdge('A', 'D');
+bfs(dg, 'A');   // ['A','B','D','C']
+dfs(dg, 'A');   // ['A','B','C','D']
+
+const disc = new Graph<string>('undirected');
+disc.addEdge('A', 'B'); disc.addEdge('C', 'D'); disc.addNode('E');
+bfsFull(disc);  // [['A','B'], ['C','D'], ['E']]  — 3 components
+dfsFull(disc);  // [['A','B'], ['C','D'], ['E']]  — 3 components
